@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horta Digital - Aprendizagem Experiencial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .cycle-card {
+            transition: transform 0.3s ease;
+        }
+        .cycle-card:hover {
+            transform: translateY(-5px);
+        }
+        .code-block {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .padlet-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: #e2e8f0;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 2px solid #10b981;
+        }
+    </style>
+</head>
+<body class="bg-emerald-50 text-gray-800 font-sans">
+
+    <!-- Header com temática de Horta -->
+    <header class="bg-emerald-700 text-white shadow-xl">
+        <div class="container mx-auto px-4 py-10 text-center">
+            <h1 class="text-4xl font-bold mb-2"><i class="fa-solid fa-seedling mr-3"></i>Horta Escolar</h1>
+        
+        </div>
+    </header>
+
+    <!-- Navegação Estilizada -->
+    <nav class="bg-white border-b sticky top-0 z-10 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center -mb-px">
+                <button onclick="openTab(event, 'projeto')" class="tab-link active px-6 py-4 border-b-4 border-emerald-600 text-emerald-700 font-bold">
+                    O Projeto
+                </button>
+                <button onclick="openTab(event, 'timeline')" class="tab-link px-6 py-4 border-b-4 border-transparent hover:text-emerald-600 transition">
+                    Linha do Tempo
+                </button>
+                <button onclick="openTab(event, 'diario')" class="tab-link px-6 py-4 border-b-4 border-transparent hover:text-emerald-600 transition">
+                    Diário de Bordo
+                </button>
+                <button onclick="openTab(event, 'galeria')" class="tab-link px-6 py-4 border-b-4 border-transparent hover:text-emerald-600 transition">
+                    Galeria de Cultivo
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 max-w-5xl">
+        
+        <!-- ABA 1: O PROJETO E TEORIA -->
+        <div id="projeto" class="tab-content active space-y-8">
+            <section class="grid md:grid-cols-2 gap-8 items-center bg-white p-8 rounded-2xl shadow-md">
+                <div>
+                    <h2 class="text-3xl font-bold text-emerald-800 mb-4">Horta: da concepção à colheita.</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Neste projeto, você aprende sobre o cultivo de plantas e acompanha o planejamento, o cultivo e a colheita. Aqui iremos acompanhar o ciclo completo:
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><i class="fa-solid fa-check-circle text-emerald-500 mt-1 mr-2"></i> <span><strong>Experiência Concreta:</strong> Colocar a mão na terra e plantar;</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check-circle text-emerald-500 mt-1 mr-2"></i> <span><strong>Observação Reflexiva:</strong> Notar como a planta reage ao sol e água;</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check-circle text-emerald-500 mt-1 mr-2"></i> <span><strong>Conceitualização:</strong> Descrever as etapas do processo;</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check-circle text-emerald-500 mt-1 mr-2"></i> <span><strong>Aplicação Ativa:</strong> Criar este site para educar outros alunos.</span></li>
+                    </ul>
+                </div>
+                <div class="bg-emerald-100 p-6 rounded-xl border-2 border-emerald-200">
+                    <h3 class="text-xl font-bold text-emerald-900 mb-4">Meta do Aluno</h3>
+                    <p class="text-emerald-800 italic">"Ao final deste ciclo, serei capaz de documentar descobertas científicas utilizando as ferramentas da web moderna."</p>
+                    <div class="mt-4 flex justify-center">
+                        <i class="fa-solid fa-arrows-spin text-6xl text-emerald-600 animate-spin-slow"></i>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ABA: LINHA DO TEMPO (PADLET) -->
+        <div id="timeline" class="tab-content space-y-8">
+            <section class="bg-white p-8 rounded-2xl shadow-md">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-emerald-800">Nossa Jornada Colaborativa</h2>
+                        <p class="text-gray-600">Acompanhe a linha do tempo da nossa horta através do mural do Padlet.</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 bg-emerald-100 px-4 py-2 rounded-full text-emerald-700 text-sm font-bold">
+                        <i class="fa-solid fa-users mr-2"></i>Espaço Colaborativo
+                    </div>
+                </div>
+
+                <!-- Container do Padlet -->
+                <div class="padlet-container shadow-inner">
+                    <!-- Substituir o SRC abaixo pela URL de incorporação do seu Padlet real -->
+                    <iframe src="https://padlet.com/embed/demo_placeholder" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:100%;display:block;padding:0;margin:0"></iframe>
+                </div>
+
+                <div class="mt-8 grid md:grid-cols-3 gap-6">
+                    <div class="p-4 bg-orange-50 rounded-lg border border-orange-100">
+                        <h4 class="font-bold text-orange-700 mb-2">1. Preparação</h4>
+                        <p class="text-xs text-orange-600">Escolha do local, limpeza do solo e adubação orgânica.</p>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg border border-blue-100">
+                        <h4 class="font-bold text-blue-700 mb-2">2. Plantio</h4>
+                        <p class="text-xs text-blue-600">Semeadura e monitoramento diário da umidade e luz.</p>
+                    </div>
+                    <div class="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
+                        <h4 class="font-bold text-emerald-700 mb-2">3. Colheita</h4>
+                        <p class="text-xs text-emerald-600">Momento de celebrar os resultados e compartilhar o alimento.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ABA 2: DIÁRIO DE BORDO (ENSINO HTML) -->
+        <div id="diario" class="tab-content space-y-8">
+            <section class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-emerald-600">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 italic">Missão: Descrevendo sua planta.</h2>
+                
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold text-emerald-700">1. Manjericão </h3>
+                        <img src="https://www.jardineriaon.com/wp-content/uploads/2025/07/albahaca.webp">
+                        <h3 class="text-lg text-black-600"><p style="text-align: justify;">O manjericão (<i>Ocimum basilicum</i>) caracteriza-se por ser uma erva aromática da família das lamiáceas, com folhas verdes e brilhantes que exalam um perfume marcante devido à presença de óleos essenciais como o eugenol. De ciclo anual ou perene de vida curta, a planta exige exposição direta ao sol por pelo menos quatro horas diárias e um solo bem drenado e rico em matéria orgânica, sendo extremamente sensível ao frio intenso e geadas. Seu crescimento é vigoroso, produzindo pequenas flores brancas ou lilases que, se não podadas, interrompem a produção de folhagem, tornando-a uma espécie ideal para o manejo pedagógico por responder rapidamente aos cuidados de rega e poda.
+                        <h3 class="text-lg font-semibold text-emerald-700">2. Observação Reflexiva
+                        <h3 class="text-lg text-black-600"><p style="text-align: justify;">Durante o planejamento, o foco é preparar o "berço" da planta. Observamos a necessidade de um solo com boa porosidade (que não fique compactado) para que as raízes respirem. É essencial planejar a adubação com matéria orgânica para fornecer nitrogênio, o nutriente principal para que o manjericão cresça verde e forte. Também observamos o local para garantir que a planta receba luz direta, já que ela é heliófila (gosta de sol) para produzir seus óleos aromáticos.<br>Durante o crescimento, observamos a germinação, onde as sementes absorvem água e despertam o embrião. Logo surgem os cotilédones (as primeiras folhinhas arredondadas), seguidos das folhas verdadeiras. <br>Durante o desenvolvimento, notamos o fototropismo, que é a inclinação da planta em direção à luz, e o crescimento dos meristemas, as regiões nas pontas do caule onde as células se multiplicam rapidamente para a planta ganhar altura.</p>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h3 class="font-bold text-gray-700 mb-4">Resultado Esperado:</h3>
+                        <div class="bg-white p-4 rounded shadow-inner border border-dashed border-emerald-300">
+                            <h1 class="text-2xl font-bold text-emerald-900">Minha Planta: Manjericão</h1>
+                            <p class="mt-2">"Não foi só sobre botânica. Foi sobre entender que a gente consegue produzir algo do zero. Ver o canteiro cheio e verde dá uma sensação de dever cumprido que nenhuma nota 10 em prova escrita consegue substituir. Fora que agora eu sou o 'especialista em temperos' lá em casa."
+                            <br> <h1 class="font-bold text-black-400">Eduardo, 15 anos (1° ano).
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ABA 3: GALERIA DE CULTIVO (IMAGENS) -->
+        <div id="galeria" class="tab-content space-y-8">
+            <section class="bg-white p-8 rounded-2xl shadow-md">
+                <h2 class="text-2xl font-bold text-emerald-800 mb-4">Registrando com imagens</h2>
+                <a href="https://padlet.com/tarsila43767109/horta-escolar-b5xvlyvumyvmeiyn" target="_blank" rel="noopener noreferrer"> Acesse o Padlet da Horta Escolar, clicando aqui.</a>
+                        </div>
+                    </section>
+        </div>
+
+    </main>
+
+    <footer class="bg-emerald-900 text-emerald-100 py-10 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="font-bold mb-2">Projeto Horta Digital &copy; 2025</p>
+            <p class="text-sm opacity-75">Baseado na Teoria de David Kolb - Educação Libertadora e Prática</p>
+        </div>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("border-emerald-600", "text-emerald-700", "font-bold");
+                tablinks[i].classList.add("border-transparent");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("border-emerald-600", "text-emerald-700", "font-bold");
+            evt.currentTarget.classList.remove("border-transparent");
+        }
+    </script>
+</body>
+</html>
